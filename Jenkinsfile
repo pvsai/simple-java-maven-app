@@ -9,13 +9,13 @@ pipeline {
     }
     stages {
         stage('Build') {
-            notifyBuildStatus('STARTED')
+            //notifyBuildStatus('STARTED')
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
     }
-    notifyBuildStatus(currentBuild.result)
+    //notifyBuildStatus(currentBuild.result)
 }
 
 def notifyBuildStatus(String buildStatus = 'STARTED') {
